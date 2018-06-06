@@ -1,11 +1,17 @@
+/**
+ * Verifica las tag en el ejercicio de Listas
+ * @method test_ej_listas
+ */
 function test_ej_listas(){
-    if(checkQuery("ul", 1) &&
-        checkQuery("ol", 1) &&
-        checkQuery("li", 19) &&
-        checkQuery("ul li", 12) &&
-        checkQuery("ol li", 7)){
-        alert("Ejercicio Correcto!!!")
-    }
+    var array=[
+        ["ul", 1],
+        ["ol", 1],
+        ["li", 19],
+        ["ul li", 12],
+        ["ol li", 7]
+    ];
+
+    verificarPagina(array);
 
 }
 
@@ -30,7 +36,20 @@ function checkQuery(tagOrQuery, quantityToCheck) {
     }
 }
 
+/**
+ * Verifica todas las TAG en la Pagina
+ * @method verificarPagina
+ * @param array
+ */
 function verificarPagina(array) {
-    console.log(array.length);
+    var resp;
+
+    for(var i=0; i < array.length; i++){
+        resp = checkQuery(array[i][0], array[i][1]);
+
+        if(!resp)
+            return;
+    }
+    alert("Ejercicio Correcto!!!");
 
 }
