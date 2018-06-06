@@ -1,18 +1,36 @@
 function test_ej_listas(){
-    var cantUL,cantOL,cantLI,cantULli,cantOLli;
-
-    cantUL=document.getElementsByTagName("ul").length;
-    cantOL=document.getElementsByTagName("ol").length;
-    cantLI=document.getElementsByTagName("li").length;
-
-    cantULli=document.querySelectorAll("ul li").length;
-    cantOLli=document.querySelectorAll("ol li").length;
-
-    if(cantOL==cantUL==1 && cantLI==20 && cantULli==7 && cantOLli==13){
+    if(checkQuery("ul", 1) &&
+        checkQuery("ol", 1) &&
+        checkQuery("li", 19) &&
+        checkQuery("ul li", 12) &&
+        checkQuery("ol li", 7)){
         alert("Ejercicio Correcto!!!")
     }
-    console.log(cantUL);
-    console.log(cantOL);
-    console.log(cantULli);
-    console.log(cantOLli);
+
+}
+
+/**
+ * Chequea la cantidad de Tag o Query y verifica que coincidan con las que deberia haber
+ * @method checkQuery
+ * @param tagOrQuery
+ * @param quantityToCheck
+ * @return true or false
+ */
+function checkQuery(tagOrQuery, quantityToCheck) {
+    var realQuantity;
+
+    realQuantity = document.querySelectorAll(tagOrQuery).length;
+
+    if(realQuantity != quantityToCheck){
+        alert("Verifique la tag o query "+tagOrQuery);
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+function verificarPagina(array) {
+    console.log(array.length);
+
 }
