@@ -11,20 +11,20 @@
 
 <div class="centrado div-conver">
     <h1>Operaciones Matemáticas</h1>
-    <form class="operacionesMat">
+    <form class="operacionesMat" name="opMat">
         <p>
-            <input id="nums1" type="text" name="sum_num1">
+            <input id="nums1" type="text" name="sum_num1" onchange="blanquear(this.id, this.value);suma()">
             +
-            <input id="nums2" type="text" name="sum_num2">
+            <input id="nums2" type="text" name="sum_num2" onchange="blanquear(this.id, this.value);suma()">
             =
-            <input id="totalS" type="text" name="sum_total">
+            <p id="totalS" type="text" name="sum_total">
         </p>
         <p>
             <input id="numr1" type="text" name="res_num1">
             -
             <input id="numr2" type="text" name="res_num2">
             =
-            <input id="totalR" type="text" name="res_total">
+            <input id="totalR" type="text" name="res_total" disabled>
         </p>
         <p>
             <input id="numm1" type="text" name="mul_num1">
